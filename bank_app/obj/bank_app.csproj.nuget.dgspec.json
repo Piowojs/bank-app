@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jarek\\Desktop\\mastermind\\bank-app\\bank_app\\bank_app.csproj": {}
+    "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\bank_app.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jarek\\Desktop\\mastermind\\bank-app\\bank_app\\bank_app.csproj": {
+    "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\bank_app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jarek\\Desktop\\mastermind\\bank-app\\bank_app\\bank_app.csproj",
+        "projectUniqueName": "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\bank_app.csproj",
         "projectName": "bank_app",
-        "projectPath": "C:\\Users\\Jarek\\Desktop\\mastermind\\bank-app\\bank_app\\bank_app.csproj",
-        "packagesPath": "C:\\Users\\Jarek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jarek\\Desktop\\mastermind\\bank-app\\bank_app\\obj\\",
+        "projectPath": "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\bank_app.csproj",
+        "packagesPath": "C:\\Users\\jajas\\.nuget\\packages\\",
+        "outputPath": "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Jarek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\jajas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -7,9 +7,9 @@ namespace bank_app{
     {
         static void Main()
         {
-            int actionType;
+            string actionType;
 
-            int actionType2;
+            string actionType2;
 
             string name;
             
@@ -17,6 +17,9 @@ namespace bank_app{
 
             List<User> Users = new List<User>();
             List<PersonalAccount> PersonalAccounts = new List<PersonalAccount>();
+            List<SavingsAccount> SavingsAccounts = new List<SavingsAccount>();
+            List<CurrencyAccount> CurrencyAccounts = new List<CurrencyAccount>();
+            
             
             while(true){
                 Console.WriteLine("What would you like to do");
@@ -26,11 +29,11 @@ namespace bank_app{
                 Console.WriteLine("3) List usernames");
                 Console.WriteLine("4) Exit");
 
-                actionType = int.Parse(Console.ReadLine());
+                actionType = Console.ReadLine();
 
                 switch(actionType)
                 {
-                    case 1:
+                    case "1":
                         Console.WriteLine("What is your username:\n");
                         name = Console.ReadLine();
                         while (Users.Exists(x => x.UserName == name))
@@ -56,7 +59,7 @@ namespace bank_app{
                         }
                     break;
 
-                    case 2:
+                    case "2":
                         bool logout;
                         logout = false;
                         while(true)
@@ -81,29 +84,72 @@ namespace bank_app{
                                         Console.WriteLine("1) Display your accounts");
                                         Console.WriteLine("2) Create new account");
                                         Console.WriteLine("3) Transfer founds");
-                                        Console.WriteLine("4) Logout");
+                                        Console.WriteLine("4) Withdraw founds");
+                                        Console.WriteLine("5) Deposit founds");
+                                        Console.WriteLine("6) Forecast founds on savings account");
+                                        Console.WriteLine("7) Add founds in different currenc to your currency account");
+                                        Console.WriteLine("8) Logout");
 
-                                        actionType = int.Parse(Console.ReadLine());
+                                        actionType = Console.ReadLine();
 
                                         switch(actionType)
                                         {
-                                            case 1:
-                                                
-                                            break;
-
-                                            case 2:
+                                            case "1":
                                                 if(item != null)
                                                 {
-                                                    item.addPersonalAccount(ref PersonalAccounts);
-                                                    item.myPersonalAccounts(PersonalAccounts);
+                                                    item.myAccounts(PersonalAccounts, SavingsAccounts, CurrencyAccounts);
                                                 }
                                             break;
 
-                                            case 3:
+                                            case "2":
+                                                Console.WriteLine("Choose account type (1-3)");
+                                                Console.WriteLine("1) Personal accout");
+                                                Console.WriteLine("2) Savings account");
+                                                Console.WriteLine("3) Currency account");
                                                 
+                                                actionType = Console.ReadLine();                                    
+                                                
+                                                switch (actionType)
+                                                {
+                                                    case "1":
+                                                        item.addPersonalAccount(ref PersonalAccounts);
+                                                        item.myPersonalAccounts(PersonalAccounts);
+                                                    break;
+                                                    case "2":
+                                                        item.addSavingsAccount(ref SavingsAccounts);
+                                                        item.mySavingsAccounts(SavingsAccounts);
+                                                    break;
+                                                    case "3":
+                                                        item.addCurrencyAccount(ref CurrencyAccounts);
+                                                        item.myCurrencyAccounts(CurrencyAccounts);
+                                                    break;
+                                                    default:
+                                                        Console.WriteLine("Invalid option");
+                                                    break;
+                                                }
                                             break;
 
-                                            case 4:
+                                            case "3":
+                                                item.Transfer(PersonalAccounts, SavingsAccounts, CurrencyAccounts);
+                                            break;
+                                            
+                                            case "4":
+                                                item.myWithdraw(PersonalAccounts, SavingsAccounts, CurrencyAccounts);
+                                            break;
+                                            
+                                            case "5":
+                                                item.myDeposit(PersonalAccounts, SavingsAccounts, CurrencyAccounts);
+                                            break;
+                                            
+                                            case "6":
+                                                item.myForecast(PersonalAccounts, SavingsAccounts, CurrencyAccounts);
+                                            break;
+                                            
+                                            case "7":
+                                                item.myConvert(PersonalAccounts, SavingsAccounts, CurrencyAccounts);
+                                            break;
+
+                                            case "8":
                                                 logout = true;
                                             break;
                                         }
@@ -125,14 +171,14 @@ namespace bank_app{
                         }
                     break;
 
-                    case 3:
+                    case "3":
                         foreach(var user in Users)
                         {
                             Console.WriteLine(user.UserName);
                         }
                     break;
                     
-                    case 4:
+                    case "4":
                         Environment.Exit(1);
                     break;
                     default:
@@ -141,7 +187,6 @@ namespace bank_app{
                     break;
                 }
             }
-
         }
     }
 }

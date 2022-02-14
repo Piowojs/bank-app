@@ -1,0 +1,15 @@
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\bin\Debug\net6.0\bank_app.exe
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\bin\Debug\net6.0\bank_app.deps.json
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\bin\Debug\net6.0\bank_app.runtimeconfig.json
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\bin\Debug\net6.0\bank_app.dll
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\bin\Debug\net6.0\ref\bank_app.dll
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\bin\Debug\net6.0\bank_app.pdb
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\obj\Debug\net6.0\bank_app.csproj.AssemblyReference.cache
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\obj\Debug\net6.0\bank_app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\obj\Debug\net6.0\bank_app.AssemblyInfoInputs.cache
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\obj\Debug\net6.0\bank_app.AssemblyInfo.cs
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\obj\Debug\net6.0\bank_app.csproj.CoreCompileInputs.cache
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\obj\Debug\net6.0\bank_app.dll
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\obj\Debug\net6.0\ref\bank_app.dll
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\obj\Debug\net6.0\bank_app.pdb
+C:\Users\Jarek\Desktop\mastermind\bank-app\bank_app\obj\Debug\net6.0\bank_app.genruntimeconfig.cache

@@ -8,7 +8,7 @@ namespace bank_app.Models
         public string UserName  {get; }
 
         public string Password {get; }
-        
+
         public string[] name = {"USD", "EUR", "GBP", "CHF", "AED", "AUD", "CAD", "UAH", "HRK", "DKK", "NOK", "SEK", "RON", "BGN", "TRY", "XDR", "ZAR", "RUB", "CNY"};
 
         public List<Guid> Accounts = new List<Guid>();
@@ -27,7 +27,7 @@ namespace bank_app.Models
             accs.Add(acc);
             Accounts.Add(acc.Id);
         }
-        
+
         public void addSavingsAccount(ref List<SavingsAccount> accs)
         {
             Console.WriteLine("Provide this account's initial balance:");
@@ -36,7 +36,7 @@ namespace bank_app.Models
             accs.Add(acc);
             Accounts.Add(acc.Id);
         }
-        
+
         public void addCurrencyAccount(ref List<CurrencyAccount> accs)
         {
             string curr = " ";
@@ -50,14 +50,14 @@ namespace bank_app.Models
                 }
 
             }
-            
+
             Console.WriteLine("Provide this account's initial balance:");
             int balance = int.Parse(Console.ReadLine());
             CurrencyAccount acc = new CurrencyAccount(balance, curr);
             accs.Add(acc);
             Accounts.Add(acc.Id);
         }
-        
+
         public void myPersonalAccounts(List<PersonalAccount> accs){
             Console.WriteLine("Your Personal Accounts:\n");
             Console.WriteLine("\tUsername:\t" + UserName + "\n");
@@ -69,11 +69,11 @@ namespace bank_app.Models
                 if(item != null){
                     item.AccInformation();
                 }
-               
+
                 Console.WriteLine("\n");
             }
         }
-        
+
         public void mySavingsAccounts(List<SavingsAccount> accs){
             Console.WriteLine("Your Savings Accounts:\n");
             Console.WriteLine("\tUsername:\t" + UserName + "\n");
@@ -85,11 +85,11 @@ namespace bank_app.Models
                 if(item != null){
                     item.AccInformation();
                 }
-               
+
                 Console.WriteLine("\n");
             }
         }
-        
+
         public void myCurrencyAccounts(List<CurrencyAccount> accs){
             Console.WriteLine("Your Currency Accounts:\n");
             Console.WriteLine("\tUsername:\t" + UserName + "\n");
@@ -99,38 +99,38 @@ namespace bank_app.Models
                 if(item != null){
                     item.AccInformation();
                 }
-               
+
                 Console.WriteLine("\n");
             }
         }
-        
+
         public void myAccounts(List<PersonalAccount> accs1, List<SavingsAccount> accs2, List<CurrencyAccount> accs3)
         {
             this.myPersonalAccounts(accs1);
             this.mySavingsAccounts(accs2);
             this.myCurrencyAccounts(accs3);
-               
+
         }
-        
+
         public void Transfer(List<PersonalAccount> accs1, List<SavingsAccount> accs2, List<CurrencyAccount> accs3)
         {
             // Guid ReceiverId;
-            
+
             // PersonalAccount SenderPersonal;
             // SavingsAccount SenderSavings;
             // CurrencyAccount SenderCurrency;
-            
+
             // PersonalAccount ReceiverPersonal;
             // SavingsAccount ReceiverSavings;
             // CurrencyAccount ReceiverCurrency;
             string curr;
-            
-            
+
+
             int Index;
-            
+            int i = 0;
             foreach(var id in Accounts)
             {
-                int i = 0;
+
                 if(accs1.Exists(x => x.Id == id))
                 {
                     Console.WriteLine("Account's index is (" + i + ")");
@@ -159,7 +159,7 @@ namespace bank_app.Models
                     i++;
                 }
             }
-            
+
 
             Console.WriteLine("Choose account's index from which you'd like to transfer money:");
             string inp = Console.ReadLine();
@@ -169,7 +169,7 @@ namespace bank_app.Models
             if(Index < 0 || Index > Accounts.Count)
             {
                 return;
-            }            
+            }
             Console.WriteLine("Paste account's id which would recieve money:");
             Guid ReceiverId = Guid.Parse(Console.ReadLine());
             Console.WriteLine("type in the amount of founds to transfer:");
@@ -184,16 +184,16 @@ namespace bank_app.Models
                     var SenderAccount = accs1.FirstOrDefault(x => x.Id == Accounts[Index]);
                     SenderAccount.Withdraw(Amount);
                     curr = SenderAccount.Currency;
-                    
-                    
+
+
                 }
                 // else if(accs2.Exists(x => x.Id == Accounts[Index]))
                 // {
-                    
+
                 //     var SenderAccount = accs2.FirstOrDefault(x => x.Id == Accounts[Index]);
                 //     SenderAccount.Withdraw(100);
                 //     curr = SenderAccount.Currency;
-                    
+
                 // }
                 // else if(accs3.Exists(x => x.Id == Accounts[Index]))
                 // {
@@ -201,35 +201,35 @@ namespace bank_app.Models
                 //     SenderAccount.Withdraw(100);
                 //     curr = SenderAccount.Currency;
                 // }
-            
+
             if(accs1.Exists(x => x.Id == ReceiverId))
                 {
                     var ReceiverAccount = accs1.FirstOrDefault(x => x.Id == ReceiverId);
                     ReceiverAccount.Deposit(Amount);
                 }
-    
+
         }
-        
+
         public void myWithdraw(List<PersonalAccount> accs1, List<SavingsAccount> accs2, List<CurrencyAccount> accs3)
         {
-            
+
             // Guid ReceiverId;
-            
+
             // PersonalAccount SenderPersonal;
             // SavingsAccount SenderSavings;
             // CurrencyAccount SenderCurrency;
-            
+
             // PersonalAccount ReceiverPersonal;
             // SavingsAccount ReceiverSavings;
             // CurrencyAccount ReceiverCurrency;
             // string curr;
-            
-            
+
+
             int Index;
-            
+            int i = 0;
             foreach(var id in Accounts)
             {
-                int i = 0;
+
                 if(accs1.Exists(x => x.Id == id))
                 {
                     Console.WriteLine("Account's index is (" + i + ")");
@@ -273,16 +273,16 @@ namespace bank_app.Models
                     var SenderAccount = accs1.FirstOrDefault(x => x.Id == Accounts[Index]);
                     SenderAccount.Withdraw(Amount);
                     // curr = SenderAccount.Currency;
-                    
-                    
+
+
                 }
                 else if(accs2.Exists(x => x.Id == Accounts[Index]))
                 {
-                    
+
                     var SenderAccount = accs2.FirstOrDefault(x => x.Id == Accounts[Index]);
                     SenderAccount.Withdraw(Amount);
                     // curr = SenderAccount.Currency;
-                    
+
                 }
                 else if(accs3.Exists(x => x.Id == Accounts[Index]))
                 {
@@ -290,34 +290,34 @@ namespace bank_app.Models
                     SenderAccount.Withdraw(Amount);
                     // curr = SenderAccount.Currency;
                 }
-            
+
             // if(accs1.Exists(x => x.Id == ReceiverId))
             //     {
             //         var ReceiverAccount = accs1.FirstOrDefault(x => x.Id == ReceiverId);
             //         ReceiverAccount.Deposit(Amount);
             //     }
         }
-        
+
         public void myDeposit(List<PersonalAccount> accs1, List<SavingsAccount> accs2, List<CurrencyAccount> accs3)
         {
-            
+
             // Guid ReceiverId;
-            
+
             // PersonalAccount SenderPersonal;
             // SavingsAccount SenderSavings;
             // CurrencyAccount SenderCurrency;
-            
+
             // PersonalAccount ReceiverPersonal;
             // SavingsAccount ReceiverSavings;
             // CurrencyAccount ReceiverCurrency;
             // string curr;
-            
-            
+
+
             int Index;
-            
+            int i = 0;
             foreach(var id in Accounts)
             {
-                int i = 0;
+
                 if(accs1.Exists(x => x.Id == id))
                 {
                     Console.WriteLine("Account's index is (" + i + ")");
@@ -362,16 +362,16 @@ namespace bank_app.Models
                     var SenderAccount = accs1.FirstOrDefault(x => x.Id == Accounts[Index]);
                     SenderAccount.Deposit(Amount);
                     // curr = SenderAccount.Currency;
-                    
-                    
+
+
                 }
                 else if(accs2.Exists(x => x.Id == Accounts[Index]))
                 {
-                    
+
                     var SenderAccount = accs2.FirstOrDefault(x => x.Id == Accounts[Index]);
                     SenderAccount.Deposit(Amount);
                     // curr = SenderAccount.Currency;
-                    
+
                 }
                 else if(accs3.Exists(x => x.Id == Accounts[Index]))
                 {
@@ -379,28 +379,28 @@ namespace bank_app.Models
                     SenderAccount.Deposit(Amount);
                     // curr = SenderAccount.Currency;
                 }
-            
+
             // if(accs1.Exists(x => x.Id == ReceiverId))
             //     {
             //         var ReceiverAccount = accs1.FirstOrDefault(x => x.Id == ReceiverId);
             //         ReceiverAccount.Deposit(Amount);
             //     }
         }
-        
+
         public void myForecast(List<PersonalAccount> accs1, List<SavingsAccount> accs2, List<CurrencyAccount> accs3)
         {
             int Index;
-            
+            int i = 0;
             foreach(var id in Accounts)
             {
-                int i = 0;
+
                 if(accs1.Exists(x => x.Id == id))
                 {
                     // Console.WriteLine("Account's index is (" + i + ")");
                     var item = accs1.FirstOrDefault(x => x.Id == id);
-                    if(item != null){
-                        item.AccInformation();
-                    }
+                    // if(item != null){
+                    //     item.AccInformation();
+                    // }
                     i++;
                 }
                 else if(accs2.Exists(x => x.Id == id))
@@ -416,13 +416,13 @@ namespace bank_app.Models
                 {
                     //Console.WriteLine("Account's index is (" + i + ")");
                     var item = accs3.FirstOrDefault(x => x.Id == id);
-                    if(item != null){
-                        item.AccInformation();
-                    }
+                    // if(item != null){
+                    //     item.AccInformation();
+                    // }
                     i++;
                 }
             }
-            
+
 
             Console.WriteLine("Choose account's index on wich you'd like to preform a forecast:");
             string inp = Console.ReadLine();
@@ -432,8 +432,8 @@ namespace bank_app.Models
             if(Index < 0 || Index > Accounts.Count)
             {
                 return;
-            }            
-            
+            }
+
             if(accs2.Exists(x => x.Id == Accounts[Index]))
                 {
                     var SenderAccount = accs2.FirstOrDefault(x => x.Id == Accounts[Index]);
@@ -450,11 +450,11 @@ namespace bank_app.Models
                 }
                 // else if(accs2.Exists(x => x.Id == Accounts[Index]))
                 // {
-                    
+
                 //     var SenderAccount = accs2.FirstOrDefault(x => x.Id == Accounts[Index]);
                 //     SenderAccount.Withdraw(100);
                 //     curr = SenderAccount.Currency;
-                    
+
                 // }
                 // else if(accs3.Exists(x => x.Id == Accounts[Index]))
                 // {
@@ -462,37 +462,37 @@ namespace bank_app.Models
                 //     SenderAccount.Withdraw(100);
                 //     curr = SenderAccount.Currency;
                 // }
-            
+
             // if(accs1.Exists(x => x.Id == ReceiverId))
             //     {
             //         var ReceiverAccount = accs1.FirstOrDefault(x => x.Id == ReceiverId);
             //         ReceiverAccount.Deposit(Amount);
             //     }
         }
-        
+
         public void myConvert(List<PersonalAccount> accs1, List<SavingsAccount> accs2, List<CurrencyAccount> accs3)
         {
             int Index;
-            
+            int i = 0;
             foreach(var id in Accounts)
             {
-                int i = 0;
+
                 if(accs1.Exists(x => x.Id == id))
                 {
                     // Console.WriteLine("Account's index is (" + i + ")");
                     var item = accs1.FirstOrDefault(x => x.Id == id);
-                    if(item != null){
-                        item.AccInformation();
-                    }
+                    // if(item != null){
+                    //     item.AccInformation();
+                    // }
                     i++;
                 }
                 else if(accs2.Exists(x => x.Id == id))
                 {
                     // Console.WriteLine("Account's index is (" + i + ")");
                     var item = accs2.FirstOrDefault(x => x.Id == id);
-                    if(item != null){
-                        item.AccInformation();
-                    }
+                    // if(item != null){
+                    //     item.AccInformation();
+                    // }
                     i++;
                 }
                 else if(accs3.Exists(x => x.Id == id))
@@ -505,7 +505,7 @@ namespace bank_app.Models
                     i++;
                 }
             }
-            
+
 
             Console.WriteLine("Choose account's index on wich you'd like to preform a currency convert on:");
             string inp = Console.ReadLine();
@@ -515,8 +515,8 @@ namespace bank_app.Models
             if(Index < 0 || Index > Accounts.Count)
             {
                 return;
-            }            
-            
+            }
+
             if(accs3.Exists(x => x.Id == Accounts[Index]))
                 {
                     var SenderAccount = accs3.FirstOrDefault(x => x.Id == Accounts[Index]);
@@ -532,11 +532,11 @@ namespace bank_app.Models
                 }
                 // else if(accs2.Exists(x => x.Id == Accounts[Index]))
                 // {
-                    
+
                 //     var SenderAccount = accs2.FirstOrDefault(x => x.Id == Accounts[Index]);
                 //     SenderAccount.Withdraw(100);
                 //     curr = SenderAccount.Currency;
-                    
+
                 // }
                 // else if(accs3.Exists(x => x.Id == Accounts[Index]))
                 // {
@@ -544,7 +544,7 @@ namespace bank_app.Models
                 //     SenderAccount.Withdraw(100);
                 //     curr = SenderAccount.Currency;
                 // }
-            
+
             // if(accs1.Exists(x => x.Id == ReceiverId))
             //     {
             //         var ReceiverAccount = accs1.FirstOrDefault(x => x.Id == ReceiverId);

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\bank_app.csproj": {}
+    "/Users/piotr/One Drive/OneDrive/Documents/Studia/Rok 2/Semsetr 1/PO/bank-app/bank_app/bank_app.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\bank_app.csproj": {
+    "/Users/piotr/One Drive/OneDrive/Documents/Studia/Rok 2/Semsetr 1/PO/bank-app/bank_app/bank_app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\bank_app.csproj",
+        "projectUniqueName": "/Users/piotr/One Drive/OneDrive/Documents/Studia/Rok 2/Semsetr 1/PO/bank-app/bank_app/bank_app.csproj",
         "projectName": "bank_app",
-        "projectPath": "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\bank_app.csproj",
-        "packagesPath": "C:\\Users\\jajas\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\Studia\\Sem3\\PO\\bank-app\\bank_app\\obj\\",
+        "projectPath": "/Users/piotr/One Drive/OneDrive/Documents/Studia/Rok 2/Semsetr 1/PO/bank-app/bank_app/bank_app.csproj",
+        "packagesPath": "/Users/piotr/.nuget/packages/",
+        "outputPath": "/Users/piotr/One Drive/OneDrive/Documents/Studia/Rok 2/Semsetr 1/PO/bank-app/bank_app/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jajas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/piotr/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -54,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }
